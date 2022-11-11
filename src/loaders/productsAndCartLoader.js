@@ -2,7 +2,9 @@ import { getStoredCart } from "../utilities/fakedb";
 
 export const productsAndCartLoader = async () => {
   // get Products
-  const productsData = await fetch("http://localhost:5000/products");
+  const productsData = await fetch(
+    "https://ema-john-simple-simple-server.vercel.app/products"
+  );
   const { products, count } = await productsData.json();
 
   // get cart

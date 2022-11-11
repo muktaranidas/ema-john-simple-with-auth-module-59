@@ -23,6 +23,8 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        console.log(user.password);
+
         form.reset();
       })
       .catch((error) => console.error(error));

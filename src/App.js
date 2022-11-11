@@ -10,6 +10,7 @@ import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import Shipping from "./components/Shipping/Shipping";
 import PrivateRoute from "./components/routes/PrivateRoute";
+import Home from "./components/Home/Home/Home";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,18 +18,19 @@ function App() {
       path: "/",
       element: <Main></Main>,
       children: [
+        // {
+        //   path: "/",
+        //   // loader: () => fetch("https://ema-john-simple-simple-server.vercel.app/products"),
+        //   element: <Home></Home>,
+        // },
+
         {
-          path: "/",
-          // loader: () => fetch("http://localhost:5000/products"),
-          element: <Shop></Shop>,
-        },
-        {
-          path: "orders",
+          path: "/orders",
           loader: productsAndCartLoader,
           element: <Orders></Orders>,
         },
         {
-          path: "inventory",
+          path: "/inventory",
           element: (
             <PrivateRoute>
               <Inventory></Inventory>
@@ -36,7 +38,7 @@ function App() {
           ),
         },
         {
-          path: "shipping",
+          path: "/shipping",
           element: (
             <PrivateRoute>
               <Shipping></Shipping>
@@ -44,15 +46,24 @@ function App() {
           ),
         },
         {
-          path: "about",
+          path: "/about",
           element: <About></About>,
         },
         {
-          path: "login",
+          path: "/home",
+          element: <Home></Home>,
+        },
+        {
+          path: "/shop",
+          element: <Shop></Shop>,
+        },
+
+        {
+          path: "/login",
           element: <Login></Login>,
         },
         {
-          path: "signup",
+          path: "/signup",
           element: <SignUp></SignUp>,
         },
       ],

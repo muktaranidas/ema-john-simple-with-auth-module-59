@@ -21,7 +21,7 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         setLoading(false);
-        // console.log(user);
+        console.log(user);
         form.reset();
         navigate(from, { replace: true });
       })
